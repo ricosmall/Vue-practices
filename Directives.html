@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Directives</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-if='seen'>
+                Now you can see this line.
+            </p>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    seen: true
+                }
+            })
+        </script>
+    </body>
+</html>

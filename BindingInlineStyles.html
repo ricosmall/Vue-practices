@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BindingInlineStyles</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div v-bind:style="{color: activeColor, fontSize: fontSize + 'px'}">
+                color: {{activeColor}}; font-size: {{fontSize}}
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    activeColor: 'red',
+                    fontSize: 30
+                }
+            })
+        </script>
+    </body>
+</html>

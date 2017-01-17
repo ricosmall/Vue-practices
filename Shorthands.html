@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Shorthands</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <a :href="url" target="_blank">Vue.js</a><br>
+            <a @click="doSomething">点我</a>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    url: 'https://vuejs.org'
+                },
+                methods: {
+                    doSomething: function () {
+                        alert('Nothing more')
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

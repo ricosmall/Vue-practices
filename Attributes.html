@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Attributes</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-bind:id="dynamicId"></p>
+            <button v-bind:disabled="someDynamicCondition">Button</button>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    dynamicId: 'dynamic',
+                    someDynamicCondition: true
+                }
+            })
+
+            var p = document.getElementById(app.dynamicId);
+            p.innerHTML = app.dynamicId;
+        </script>
+    </body>
+</html>

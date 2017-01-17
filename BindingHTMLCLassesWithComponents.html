@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BindingHTMLClassesWithComponents</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <my-component v-bind:class="{active: isActive}"></my-component>
+        </div>
+        <script type="text/javascript">
+            Vue.component('my-component', {
+                template: '<p class="foo bar">Hello</p>'
+            })
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    isActive: true
+                }
+            })
+
+            var el = document.getElementById('app').childNodes[0]
+            el.innerHTML = el.className
+        </script>
+    </body>
+</html>

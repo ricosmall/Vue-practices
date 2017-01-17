@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ListRendering</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="item in items">{{item.message}}</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    items: [
+                        {message: 'foo'},
+                        {message: 'bar'}
+                    ]
+                }
+            })
+        </script>
+        <div id="app2">
+            <ul>
+                <li v-for="(item, index) in items">
+                    {{parentMessage}} - {{index}} - {{item.message}}
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var app2 = new Vue({
+                el: '#app2',
+                data: {
+                    parentMessage: 'Parent',
+                    items: [
+                        {message: 'foo'},
+                        {message: 'bar'}
+                    ]
+                }
+            })
+        </script>
+
+        <div id="app3">
+            <ul>
+                <li v-for="(value, key) in object">
+                    {{key}}: {{value}}
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var app3 = new Vue({
+                el: '#app3',
+                data: {
+                    object: {
+                        firstName: 'John',
+                        lastName: 'Doe',
+                        age: 30
+                    }
+                }
+            })
+        </script>
+        <div id="app4">
+            <ul>
+                <li v-for="i in 10">{{i}}</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var app4 = new Vue({
+                el: '#app4',
+                data: {
+                    
+                }
+            })
+        </script>
+    </body>
+</html>

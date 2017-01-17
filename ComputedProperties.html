@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ComputedProperties</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>
+                Original message: "{{message}}"
+            </p>
+            <p>
+                Computed reversed message: "{{reversedMessage}}"
+            </p>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello'
+                },
+                computed: {
+                    reversedMessage: function () {
+                        return this.message.split('').reverse().join('')
+                    }
+                }
+            })
+        </script>
+        <div id="app2">
+            <p>
+                {{fullName}}
+            </p>
+        </div>
+        <script type="text/javascript">
+            var app2 = new Vue({
+                el: '#app2',
+                data: {
+                    fistName: 'Foo',
+                    lastName: 'Bar'
+                },
+                computed: {
+                    fullName: function () {
+                        return this.fistName + ' ' + this.lastName
+                    }
+                }
+            })
+        </script>
+        <div id="app3">
+            <p>
+                {{fullName}}
+            </p>
+        </div>
+        <script type="text/javascript">
+            var app3 = new Vue({
+                el: '#app3',
+                data: {
+                    fistName: 'Foo',
+                    lastName: 'Bar'
+                },
+                computed: {
+                    fullName: {
+                        get: function () {
+                            return this.fistName + ' ' + this.lastName
+                        },
+                        set: function (value) {
+                            var names = value.split(' ')
+                            this.fistName = names[0]
+                            this.lastName = names[1]
+                        }
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

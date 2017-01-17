@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UsingJavascriptExpressions</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>
+                {{number + 1}}
+            </p>
+            <p>
+                {{boolValue ? 'display' : 'undisplay'}}
+            </p>
+            <p>
+                {{msg.split('').reverse().join('')}}
+            </p>
+            <p v-bind:id="'list-' + id">
+
+            </p>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    number: 5,
+                    boolValue: true,
+                    msg: 'Hello Vue 2.0',
+                    id: 'one'
+                }
+            })
+
+            var p = document.getElementById('list-' + app.id);
+            p.innerHTML = 'list-' + app.id;
+        </script>
+    </body>
+</html>

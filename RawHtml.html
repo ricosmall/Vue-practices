@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RawHtml</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-html="rawHtml">
+                {{msg}}
+            </p>
+            <p>
+                {{msg}}
+            </p>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    msg: 'Hello Vue'
+                }
+            })
+        </script>
+    </body>
+</html>
