@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PropertiesAndMethods</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <p>
+            {{a}}
+        </p>
+        <script type="text/javascript">
+            var data = {
+                a: 1
+            }
+            var vm = new Vue({
+                el: 'p',
+                data: data
+            })
+        </script>
+    </body>
+</html>
