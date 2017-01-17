@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>KeyModifiers</title>
+        <script src="vue.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="#app">
+            <input v-on:keyup.13="submit">
+            <input v-on:alt.67="clear">
+            <div v-on:click.ctrl="doSomething">
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = new Vue({
+                el: '#app',
+                methods: {
+                    submit: function () {
+
+                    },
+                    clear: function () {
+
+                    },
+                    doSomething: function () {
+
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
